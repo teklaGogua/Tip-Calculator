@@ -11,7 +11,6 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <script src="script.js"></script>
 
     <title>Tip calculator app</title>
   </head>
@@ -25,23 +24,23 @@
           <h1>Bill</h1>
           <div class="fullInput">
             <img src="images/icon-dollar.svg" alt="$" />
-            <input type="number" value="0" />
+            <input id="bill" type="number" value="0" />
           </div>
         </section>
         <section class="cln-first">
           <h1>Select Tip %</h1>
-          <input type="button" value="5%" />
-          <input type="button" value="10%" />
-          <input type="button" value="15%" />
-          <input type="button" value="25%" />
-          <input type="button" value="50%" />
-          <input type="number" placeholder="Custom" />
+          <input class="btn--per" type="button" value="5%" />
+          <input class="btn--per" type="button" value="10%" />
+          <input class="btn--per" type="button" value="15%" />
+          <input class="btn--per" type="button" value="25%" />
+          <input class="btn--per" type="button" value="50%" />
+          <input id='custom' type="text" placeholder="Custom" />
         </section>
         <section class="cln-first">
           <h1>Number of People</h1>
           <div class="fullInput">
             <img src="images/icon-person.svg" alt="👤" />
-            <input type="number" value="0" min="1" required />
+            <input id="people" type="number" value="0" min="1" required />
           </div>
         </section>
         <section class="cln-second">
@@ -67,5 +66,6 @@
     <footer>
       <p>Coded by Tekla Gogua</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
