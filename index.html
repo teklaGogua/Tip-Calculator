@@ -24,7 +24,7 @@
           <h1>Bill</h1>
           <div class="fullInput">
             <img src="images/icon-dollar.svg" alt="$" />
-            <input id="bill" type="number" value="0" />
+            <input id="bill" type="number" value="0" min="1" step="0.01" />
           </div>
         </section>
         <section class="cln-first">
@@ -34,13 +34,13 @@
           <input class="btn--per" type="button" value="15%" />
           <input class="btn--per" type="button" value="25%" />
           <input class="btn--per" type="button" value="50%" />
-          <input id='custom' type="text" placeholder="Custom" />
+          <input id="custom" type="text" placeholder="Custom" min="1" />
         </section>
         <section class="cln-first">
           <h1>Number of People</h1>
           <div class="fullInput">
             <img src="images/icon-person.svg" alt="👤" />
-            <input id="people" type="number" value="0" min="1" required />
+            <input id="people" type="number" value="0" min="1" required="" />
           </div>
         </section>
         <section class="cln-second">
