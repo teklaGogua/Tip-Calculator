@@ -16,8 +16,8 @@ const init = function () {
   bill.value = 0;
   people.value = 0;
   custom.value = '';
-  tip.textContent = '0.00$';
-  total.textContent = '0.00$';
+  tip.textContent = '$0.00';
+  total.textContent = '$0.00';
 };
 init();
 
@@ -29,8 +29,8 @@ const calculateDisplay = function (persentage) {
   const totalRes = payRes + tipRes;
 
   // display tip(per person) and total(per person)
-  tip.textContent = tipRes.toFixed(2);
-  total.textContent = totalRes.toFixed(2);
+  tip.textContent = '$' + tipRes.toFixed(2);
+  total.textContent = '$' + totalRes.toFixed(2);
 };
 
 // Loop through Persentage buttons

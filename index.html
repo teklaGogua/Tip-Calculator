@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link
+    <!-- <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
-    />
-
+    /> -->
+    <link rel="stylesheet" href="style.css" />
     <title>Tip calculator app</title>
   </head>
   <body>
@@ -21,44 +21,66 @@
     <main>
       <div class="container">
         <section class="cln-first">
-          <h1>Bill</h1>
-          <div class="fullInput">
-            <img src="images/icon-dollar.svg" alt="$" />
-            <input id="bill" type="number" value="0" min="1" step="0.01" />
-          </div>
-        </section>
-        <section class="cln-first">
-          <h1>Select Tip %</h1>
-          <input class="btn--per" type="button" value="5%" />
-          <input class="btn--per" type="button" value="10%" />
-          <input class="btn--per" type="button" value="15%" />
-          <input class="btn--per" type="button" value="25%" />
-          <input class="btn--per" type="button" value="50%" />
-          <input id="custom" type="text" placeholder="Custom" min="1" />
-        </section>
-        <section class="cln-first">
-          <h1>Number of People</h1>
-          <div class="fullInput">
-            <img src="images/icon-person.svg" alt="👤" />
-            <input id="people" type="number" value="0" min="1" required="" />
-          </div>
+          <section class="sub-cln">
+            <h1>Bill</h1>
+            <div class="fullInput">
+              <img src="images/icon-dollar.svg" alt="$" />
+              <input
+                class="input"
+                id="bill"
+                type="number"
+                value="0"
+                min="0.01"
+                step="0.01"
+              />
+            </div>
+          </section>
+          <section class="sub-cln">
+            <h1>Select Tip %</h1>
+            <input class="btn--per" type="button" value="5%" />
+            <input class="btn--per" type="button" value="10%" />
+            <input class="btn--per" type="button" value="15%" />
+            <input class="btn--per" type="button" value="25%" />
+            <input class="btn--per" type="button" value="50%" />
+            <input
+              class="input"
+              id="custom"
+              type="text"
+              placeholder="Custom"
+              min="1"
+            />
+          </section>
+          <section class="sub-cln">
+            <h1>Number of People</h1>
+            <div class="fullInput">
+              <img src="images/icon-person.svg" alt="👤" />
+              <input
+                class="input"
+                id="people"
+                type="number"
+                value="0"
+                min="1"
+                required=""
+              />
+            </div>
+          </section>
         </section>
         <section class="cln-second">
-          <div class="cln-first">
+          <section class="sub-cln">
             <div class="info">
               <h1>Tip Amount</h1>
               <p>/ person</p>
             </div>
             <div class="money" id="tip"></div>
-          </div>
+          </section>
 
-          <div class="cln-first">
+          <section class="sub-cln">
             <div class="info">
               <h1>Total</h1>
               <p>/ person</p>
             </div>
             <div class="money" id="total"></div>
-          </div>
+          </section>
           <button id="reset">Reset</button>
         </section>
       </div>
