@@ -10,17 +10,17 @@ body {
   background-color: hsl(185, 41%, 84%);
   font-family: 'Space Mono', monospace;
   font-weight: 700;
+  overflow-y: hidden;
 }
 
 header,
 footer {
   text-align: center;
-  margin: 100px;
+  margin: 45px;
   color: hsl(183, 100%, 15%);
 }
 
 main {
-  margin: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,28 +33,36 @@ main {
   justify-content: center;
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 18px;
   box-shadow: 0 0 10px hsl(184, 14%, 56%);
 }
 
-.cln-first {
-  color: hsl(186, 14%, 43%);
+.cln {
   font-size: smaller;
   width: 50%;
   padding-right: 10px;
   padding-left: 10px;
+  min-height: 340px;
 }
 
-.cln-second {
+.first {
+  color: hsl(186, 14%, 43%);
+  max-width: 620px;
+}
+
+.second {
   background-color: hsl(183, 100%, 15%);
-  width: 50%;
-  padding-right: 10px;
-  padding-left: 10px;
+  border-radius: 18px;
+  position: relative;
 }
 
 .sub-cln {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.second .sub-cln {
+  margin: 50px 40px 0 40px;
 }
 
 h1 {
@@ -62,20 +70,28 @@ h1 {
   font-size: 18px;
 }
 
-.input {
-  background-color: hsl(189, 41%, 97%);
-  font-size: 24px;
-  border: none;
-  cursor: pointer;
-  height: 40px;
+.result {
+  text-align: right;
+  font-size: 40px;
+  color: hsl(172, 67%, 45%);
+}
+
+.info {
+  float: left;
+  color: hsl(0, 0%, 100%);
+  font-size: larger;
+}
+
+.info p {
+  font-size: smaller;
+  color: hsl(184, 14%, 56%);
 }
 
 .btn--per {
   border: none;
   border-radius: 5px;
-  color: white;
+  color: hsl(0, 0%, 100%);
   background-color: hsl(183, 100%, 15%);
-  padding: 12px 40px;
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
@@ -84,9 +100,9 @@ h1 {
   height: 50px;
 }
 
-/* .btn--per:focus {
-  background-color:
-} */
+.btn--per:focus {
+  background-color: hsl(172, 67%, 45%);
+}
 
 #custom {
   border-radius: 5px;
@@ -95,17 +111,65 @@ h1 {
   margin: 4px 2px;
   width: 120px;
   height: 50px;
+  cursor: pointer;
+}
+
+#custom:focus {
+  border: solid 3px hsl(172, 67%, 45%);
+}
+
+#custom::placeholder {
+  font-size: 24px;
+  font-weight: bolder;
+  color: hsl(186, 14%, 43%);
 }
 
 .fullInput {
   background-color: hsl(189, 41%, 97%);
   width: fit-content;
+  cursor: pointer;
 }
 
 .fullInput .input {
   text-align: right;
+  width: 350px;
+}
+
+.fullInput img {
+  margin-left: 10px;
+}
+
+.input {
+  background-color: hsl(189, 41%, 97%);
+  font-size: 24px;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+.input::placeholder {
+  color: hsl(186, 14%, 43%);
+  font-weight: lighter;
 }
 
 input:focus {
   outline: none;
+}
+
+#reset {
+  background-color: hsl(181, 100%, 21%);
+  color: hsl(183, 100%, 19%);
+  border: none;
+  border-radius: 2px;
+  padding: 15px 135px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  bottom: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  cursor: pointer;
 }

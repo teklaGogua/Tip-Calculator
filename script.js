@@ -13,8 +13,8 @@ let persentage;
 
 // Starting conditions
 const init = function () {
-  bill.value = 0;
-  people.value = 0;
+  bill.value = '';
+  people.value = '';
   custom.value = '';
   tip.textContent = '$0.00';
   total.textContent = '$0.00';
