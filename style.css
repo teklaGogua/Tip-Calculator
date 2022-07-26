@@ -88,6 +88,7 @@ h1 {
 }
 
 .info {
+  margin-top: 10px;
   float: left;
   color: hsl(0, 0%, 100%);
   font-size: larger;
@@ -96,6 +97,7 @@ h1 {
 .info p {
   font-size: smaller;
   color: hsl(184, 14%, 56%);
+  margin: -5px;
 }
 
 .btn--per {
@@ -125,10 +127,6 @@ h1 {
   cursor: pointer;
 }
 
-#custom:focus {
-  border: solid 3px hsl(172, 67%, 45%);
-}
-
 #custom::placeholder {
   font-size: 24px;
   font-weight: bolder;
@@ -147,7 +145,8 @@ h1 {
 }
 
 .fullInput img {
-  margin-left: 10px;
+  margin: 10px 0 10px 10px;
+  position: absolute;
 }
 
 .input {
@@ -165,6 +164,8 @@ h1 {
 
 input:focus {
   outline: none;
+  border: solid 3px hsl(172, 67%, 45%);
+  border-radius: 5px;
 }
 
 #reset {
