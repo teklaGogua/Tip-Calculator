@@ -83,6 +83,16 @@ const check = function () {
   }
 };
 
+// Gives all functions that are needed for custom button
+const customFun = function () {
+  check();
+  if (active) {
+    persentage = parseFloat(custom.value);
+    calculateDisplay(persentage);
+    reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
+  }
+};
+
 // Loop through Persentage buttons
 for (let i = 0; i < btnsPer.length; i++) {
   // Tip buttons' functionality
@@ -99,16 +109,9 @@ for (let i = 0; i < btnsPer.length; i++) {
 }
 
 // Input Custom's functionality
-custom.addEventListener('change', function () {
-  check();
-
-  // If calculator is in active mode displays results
-  if (active) {
-    persentage = parseFloat(custom.value);
-    calculateDisplay(persentage);
-    reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
-  }
-});
+custom.addEventListener('change', customFun);
+bill.addEventListener('change', customFun);
+people.addEventListener('change', customFun);
 
 // Button Reset's functionality
 reset.addEventListener('click', init);
