@@ -183,3 +183,8 @@ input:focus {
   bottom: 30px;
   cursor: pointer;
 }
+
+.false {
+  border: solid 3px hsl(0, 86%, 46%);
+  border-radius: 5px;
+}

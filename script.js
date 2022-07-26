@@ -9,45 +9,85 @@ const total = document.getElementById('total');
 const btnsPer = document.querySelectorAll('.btn--per');
 const reset = document.getElementById('reset');
 
-let persentage;
+// Variables
+let persentage, active;
 
 // Starting conditions
 const init = function () {
+  active = false;
   bill.value = '';
   people.value = '';
   custom.value = '';
   tip.textContent = '$0.00';
   total.textContent = '$0.00';
+
+  people.classList.remove('false');
+  bill.classList.remove('false');
 };
 init();
 
-// Calculates tips and total payment and dispays them
+// Calculates tips and total payment and displays them
 const calculateDisplay = function (persentage) {
   // All calculations
   const payRes = bill.value / people.value;
   const tipRes = payRes * (persentage / 100);
   const totalRes = payRes + tipRes;
 
-  // display tip(per person) and total(per person)
+  // Display tip(per person) and total(per person)
   tip.textContent = '$' + tipRes.toFixed(2);
   total.textContent = '$' + totalRes.toFixed(2);
+
+  // Display style and set active to false
+  people.classList.remove('false');
+  bill.classList.remove('false');
+  active = false;
+};
+
+// Checks information about people and bill amount and set's style
+const check = () => {
+  // Setting active
+  if (people.value !== '0' && people.value !== '' && bill.value !== '') {
+    active = true;
+  }
+
+  // Check people value
+  if (people.value === '0' || people.value === '') {
+    people.classList.add('false');
+  } else {
+    people.classList.remove('false');
+  }
+
+  // Check bill value
+  if (bill.value === '') {
+    bill.classList.add('false');
+  } else {
+    bill.classList.remove('false');
+  }
 };
 
 // Loop through Persentage buttons
 for (let i = 0; i < btnsPer.length; i++) {
   // Tip buttons' functionality
   btnsPer[i].addEventListener('click', function () {
-    // Gets persentage(number with $ symbol), parses and returns just number
-    persentage = parseFloat(btnsPer[i].value);
+    check();
 
-    calculateDisplay(persentage);
+    // If calculator is in active mode displays results
+    if (active) {
+      // Gets persentage(number with $ symbol), parses and returns just number
+      persentage = parseFloat(btnsPer[i].value);
+
+      calculateDisplay(persentage);
+    }
   });
 }
 
 // Input Custom's functionality
 custom.addEventListener('change', function () {
-  persentage = parseFloat(custom.value);
-  calculateDisplay(persentage);
+  check();
+  if (active) {
+    persentage = parseFloat(custom.value);
+    calculateDisplay(persentage);
+  }
 });
 
 // Button Reset's functionality
