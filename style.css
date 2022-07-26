@@ -1,4 +1,4 @@
-@import url('https://fonts.google.com/specimen/Space+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -10,7 +10,6 @@ body {
   background-color: hsl(185, 41%, 84%);
   font-family: 'Space Mono', monospace;
   font-weight: 700;
-  overflow-y: hidden;
 }
 
 header,
@@ -35,6 +34,7 @@ main {
   padding: 20px;
   border-radius: 18px;
   box-shadow: 0 0 10px hsl(184, 14%, 56%);
+  margin: 0 10px 0 10px;
 }
 
 .cln {
@@ -42,12 +42,12 @@ main {
   width: 50%;
   padding-right: 10px;
   padding-left: 10px;
-  min-height: 340px;
+  min-height: 400px;
+  width: 410px;
 }
 
 .first {
   color: hsl(186, 14%, 43%);
-  max-width: 620px;
 }
 
 .second {
@@ -58,16 +58,27 @@ main {
 
 .sub-cln {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .second .sub-cln {
-  margin: 50px 40px 0 40px;
+  margin: 30px 40px 0 40px;
 }
 
 h1 {
   padding-bottom: 10px;
   font-size: 18px;
+}
+
+#total-info {
+  margin-bottom: 100px;
+  max-width: 320px;
+  word-wrap: break-word;
+}
+
+#tip-info {
+  max-width: 320px;
+  word-wrap: break-word;
 }
 
 .result {
@@ -169,7 +180,5 @@ input:focus {
   display: inline-block;
   position: absolute;
   bottom: 30px;
-  margin-left: 40px;
-  margin-right: 40px;
   cursor: pointer;
 }
