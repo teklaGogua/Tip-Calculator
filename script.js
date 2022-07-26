@@ -23,6 +23,7 @@ const init = function () {
 
   people.classList.remove('false');
   bill.classList.remove('false');
+  reset.style.backgroundColor = 'hsl(181, 100%, 21%)';
 };
 init();
 
@@ -77,6 +78,7 @@ for (let i = 0; i < btnsPer.length; i++) {
       persentage = parseFloat(btnsPer[i].value);
 
       calculateDisplay(persentage);
+      reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
     }
   });
 }
@@ -87,6 +89,7 @@ custom.addEventListener('change', function () {
   if (active) {
     persentage = parseFloat(custom.value);
     calculateDisplay(persentage);
+    reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
   }
 });
 
