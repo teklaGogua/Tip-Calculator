@@ -136,6 +136,7 @@ h1 {
 .fullInput {
   background-color: hsl(189, 41%, 97%);
   width: fit-content;
+  height: fit-content;
   cursor: pointer;
 }
 
@@ -187,4 +188,16 @@ input:focus {
 .false {
   border: solid 3px hsl(0, 86%, 46%);
   border-radius: 5px;
+}
+
+.fit h1 {
+  display: inline-block;
+}
+
+.message {
+  float: right;
+  font-size: 18px;
+  margin: 3px 40px 0 0;
+  color: hsl(0, 86%, 46%);
+  font-size: larger;
 }

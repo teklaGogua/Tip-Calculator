@@ -8,6 +8,7 @@ const tip = document.getElementById('tip');
 const total = document.getElementById('total');
 const btnsPer = document.querySelectorAll('.btn--per');
 const reset = document.getElementById('reset');
+const message = document.querySelectorAll('.message');
 
 // Variables
 let persentage, active;
@@ -20,7 +21,11 @@ const init = function () {
   custom.value = '';
   tip.textContent = '$0.00';
   total.textContent = '$0.00';
+  for (let i = 0; i < message.length; i++) {
+    message[i].textContent = '';
+  }
 
+  // Styles
   people.classList.remove('false');
   bill.classList.remove('false');
   reset.style.backgroundColor = 'hsl(181, 100%, 21%)';
@@ -41,28 +46,40 @@ const calculateDisplay = function (persentage) {
   // Display style and set active to false
   people.classList.remove('false');
   bill.classList.remove('false');
+  for (let i = 0; i < message.length; i++) {
+    message[i].textContent = '';
+  }
   active = false;
 };
 
 // Checks information about people and bill amount and set's style
-const check = () => {
+const check = function () {
   // Setting active
-  if (people.value !== '0' && people.value !== '' && bill.value !== '') {
+  if (
+    people.value !== '0' &&
+    people.value !== '' &&
+    bill.value !== '' &&
+    bill.value !== '0'
+  ) {
     active = true;
   }
 
   // Check people value
   if (people.value === '0' || people.value === '') {
     people.classList.add('false');
+    message[1].textContent = "Can't be zero";
   } else {
     people.classList.remove('false');
+    message[1].textContent = '';
   }
 
   // Check bill value
-  if (bill.value === '') {
+  if (bill.value === '' || bill.value === '0') {
     bill.classList.add('false');
+    message[0].textContent = "Can't be zero";
   } else {
     bill.classList.remove('false');
+    message[0].textContent = '';
   }
 };
 
@@ -74,9 +91,7 @@ for (let i = 0; i < btnsPer.length; i++) {
 
     // If calculator is in active mode displays results
     if (active) {
-      // Gets persentage(number with $ symbol), parses and returns just number
       persentage = parseFloat(btnsPer[i].value);
-
       calculateDisplay(persentage);
       reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
     }
@@ -86,6 +101,8 @@ for (let i = 0; i < btnsPer.length; i++) {
 // Input Custom's functionality
 custom.addEventListener('change', function () {
   check();
+
+  // If calculator is in active mode displays results
   if (active) {
     persentage = parseFloat(custom.value);
     calculateDisplay(persentage);
@@ -95,3 +112,7 @@ custom.addEventListener('change', function () {
 
 // Button Reset's functionality
 reset.addEventListener('click', init);
+
+// If value of bill or people is changed, sets style
+bill.addEventListener('change', check);
+people.addEventListener('change', check);
