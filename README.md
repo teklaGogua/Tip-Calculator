@@ -23,15 +23,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop-design-completed](./design/desktop-design-completed.png)
 
-![desktop-design-completed](./design/desktop-design-completed.jpg)
+![desktop-design-empty](./design/desktop-design-empty.png)
 
-![desktop-design-empty](./design/desktop-design-empty.jpg)
+![desktop-design-error](./design/desktop-design-error.png)
 
-![desktop-design-error](./design/desktop-design-error.jpg)
-
-![mobile-design(1)](<./design/mobile-design(1).jpg)
+![mobile-design(1)](./design/mobile-design(1).jpg)
 
 ![mobile-design(2)](<./design/mobile-design(2).jpg>)
 
