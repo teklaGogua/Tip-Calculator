@@ -29,6 +29,7 @@ const init = function () {
   people.classList.remove('false');
   bill.classList.remove('false');
   reset.style.backgroundColor = 'hsl(181, 100%, 21%)';
+  custom.style.border = 'none';
 };
 init();
 
@@ -85,11 +86,16 @@ const check = function () {
 
 // Gives all functions that are needed for custom button
 const customFun = function () {
-  check();
-  if (active) {
-    persentage = parseFloat(custom.value);
-    calculateDisplay(persentage);
-    reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
+  if (custom.value !== '') {
+    check();
+    custom.style.border = 'solid 3px hsl(172, 67%, 45%)';
+    if (active) {
+      persentage = parseFloat(custom.value);
+      calculateDisplay(persentage);
+      reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
+    }
+  } else {
+    custom.style.border = 'none';
   }
 };
 
@@ -98,7 +104,7 @@ for (let i = 0; i < btnsPer.length; i++) {
   // Tip buttons' functionality
   btnsPer[i].addEventListener('click', function () {
     check();
-
+    custom.style.border = 'none';
     // If calculator is in active mode displays results
     if (active) {
       persentage = parseFloat(btnsPer[i].value);

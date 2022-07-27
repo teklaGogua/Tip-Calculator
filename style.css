@@ -163,7 +163,7 @@ h1 {
   font-weight: lighter;
 }
 
-input:focus {
+.input:focus {
   outline: none;
   border: solid 3px hsl(172, 67%, 45%);
   border-radius: 5px;
