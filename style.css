@@ -19,6 +19,11 @@ footer {
   color: hsl(183, 100%, 15%);
 }
 
+a {
+  text-decoration: none;
+  color: hsl(183, 100%, 15%);
+}
+
 main {
   display: flex;
   align-items: center;
