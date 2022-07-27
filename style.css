@@ -44,6 +44,7 @@ main {
   padding-left: 10px;
   min-height: 400px;
   width: 410px;
+  display: grid;
 }
 
 .first {
@@ -200,4 +201,54 @@ h1 {
   margin: 3px 40px 0 0;
   color: hsl(0, 86%, 46%);
   font-size: larger;
+}
+
+@media (max-width: 880px) {
+  .container {
+    display: block;
+    font-size: smaller;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .cln {
+    width: 300px;
+    min-height: auto;
+  }
+
+  .second {
+    min-height: 250px;
+  }
+
+  .second .sub-cln {
+    margin: 30px 10px 0 10px;
+  }
+
+  #tip-info,
+  #total-info {
+    max-width: 260px;
+  }
+
+  .btn--per {
+    width: 130px;
+  }
+
+  #custom {
+    width: 130px;
+  }
+
+  #reset {
+    padding: 15px 105px;
+    bottom: 15px;
+  }
+
+  .fullInput .input {
+    width: 280px;
+  }
+
+  .message {
+    margin: 3px 0 0 0;
+  }
 }
