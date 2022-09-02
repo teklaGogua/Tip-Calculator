@@ -30,6 +30,7 @@ const init = function () {
   bill.classList.remove('false');
   reset.style.backgroundColor = 'hsl(181, 100%, 21%)';
   custom.style.border = 'none';
+  btnsPer.forEach(btn => btn.classList.remove('btn-style'));
 };
 init();
 
@@ -53,14 +54,16 @@ const calculateDisplay = function (persentage) {
   active = false;
 };
 
-// Checks information about people and bill amount and set's style
+// Checks information about people and bill amount,
+// sets style and calls calculateDisplay function
 const check = function () {
   // Setting active
   if (
     people.value !== '0' &&
     people.value !== '' &&
     bill.value !== '' &&
-    bill.value !== '0'
+    bill.value !== '0' &&
+    typeof persentage !== 'undefined'
   ) {
     active = true;
   }
@@ -82,20 +85,21 @@ const check = function () {
     bill.classList.remove('false');
     message[0].textContent = '';
   }
+
+  // If calculator is in active mode displays results
+  if (active) {
+    calculateDisplay(persentage);
+    reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
+  }
 };
 
 // Gives all functions that are needed for custom button
 const customFun = function () {
+  custom.style.border = 'solid 3px hsl(172, 67%, 45%)';
+  btnsPer.forEach(btn => btn.classList.remove('btn-style'));
   if (custom.value !== '') {
+    persentage = parseFloat(custom.value);
     check();
-    custom.style.border = 'solid 3px hsl(172, 67%, 45%)';
-    if (active) {
-      persentage = parseFloat(custom.value);
-      calculateDisplay(persentage);
-      reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
-    }
-  } else {
-    custom.style.border = 'none';
   }
 };
 
@@ -103,25 +107,22 @@ const customFun = function () {
 for (let i = 0; i < btnsPer.length; i++) {
   // Tip buttons' functionality
   btnsPer[i].addEventListener('click', function () {
-    check();
     custom.style.border = 'none';
-    // If calculator is in active mode displays results
-    if (active) {
-      persentage = parseFloat(btnsPer[i].value);
-      calculateDisplay(persentage);
-      reset.style.backgroundColor = 'hsl(172, 67%, 45%)';
-    }
+    persentage = parseFloat(btnsPer[i].value);
+    check();
+    // Turns green clicked button
+    btnsPer.forEach(btn => btn.classList.remove('btn-style'));
+    btnsPer[i].classList.add('btn-style');
   });
 }
 
 // Input Custom's functionality
 custom.addEventListener('change', customFun);
-bill.addEventListener('change', customFun);
-people.addEventListener('change', customFun);
+custom.addEventListener('click', customFun);
+
+// If value of bill or people is changed, sets style and displays results
+bill.addEventListener('change', check);
+people.addEventListener('change', check);
 
 // Button Reset's functionality
 reset.addEventListener('click', init);
-
-// If value of bill or people is changed, sets style
-bill.addEventListener('change', check);
-people.addEventListener('change', check);

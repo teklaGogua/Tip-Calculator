@@ -119,10 +119,6 @@ h1 {
   height: 50px;
 }
 
-.btn--per:focus {
-  background-color: hsl(172, 67%, 45%);
-}
-
 #custom {
   border-radius: 5px;
   padding: 12px 12px;
@@ -194,6 +190,10 @@ h1 {
 .false {
   border: solid 3px hsl(0, 86%, 46%);
   border-radius: 5px;
+}
+
+.btn-style {
+  background-color: hsl(172, 67%, 45%);
 }
 
 .fit h1 {
