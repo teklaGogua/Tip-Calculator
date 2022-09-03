@@ -16,6 +16,7 @@ let persentage, active;
 // Starting conditions
 const init = function () {
   active = false;
+  persentage = undefined;
   bill.value = '';
   people.value = '';
   custom.value = '';
